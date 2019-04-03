@@ -1,6 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   height: 100%;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -21,6 +26,8 @@ code {
   display: flex;
   height: 100%;
   flex-flow: column nowrap;
+  width: 1700px;
+  margin: 0 auto;
 }
 
 main {
@@ -44,4 +51,26 @@ header {
 nav {
   flex: 1;
   margin: 0 2em;
+}
+
+.reporting-tile-wrapper {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 1px 6px;
+  margin-bottom: 1px;
+}
+
+.reporting-tile {
+  padding: 5px 0;
+  background-color: azure;
+}
+
+.reporting-tile:hover {
+  position: relative;
+  top: -2px;
+  left: -4px;
+  width: 110%;
+  box-shadow: 1px 8px 15px;
+  z-index: 5;
 }

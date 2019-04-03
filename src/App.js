@@ -21,7 +21,7 @@ class App extends React.Component {
         </header>
         <main>
           <Switch>
-            <Redirect from="/" exact to="/profile" />
+            <Redirect from="/" exact to="/time-journal" />
             <Route path="/profile" component={MyProfilePage} />
             <Route path="/time-journal" component={TimeJournalPage} />
             <Route path="/my-projects" component={MyProjectsPage} />
