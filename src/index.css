@@ -1,3 +1,6 @@
+html {
+  height: 100%;
+}
 body {
   margin: 0;
   padding: 0;
@@ -6,9 +9,39 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  display: flex;
+  height: 100%;
+  flex-flow: column nowrap;
+}
+
+main {
+  flex: 1;
+}
+
+header a {
+  margin: 0 1em;
+}
+
+header a:first-of-type {
+  margin-left: 0;
+}
+
+header {
+  display: flex;
+  flex-flow: row;
+  margin-bottom: 1em;
+}
+
+nav {
+  flex: 1;
+  margin: 0 2em;
 }

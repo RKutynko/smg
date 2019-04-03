@@ -1,26 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Switch, NavLink, Route, Redirect } from "react-router-dom";
 
-class App extends Component {
+import MyProfilePage from "./containers/MyProfilePage";
+import MyProjectsPage from "./containers/MyProjectsPage";
+import TimeJournalPage from "./containers/TimeJournalPage";
+import OutOfOfficePage from "./containers/OutOfOfficePage";
+
+class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+      <>
+        <header>
+          <img alt="SMG logo" src="/logo.png" />
+          <nav>
+            <NavLink to="/profile">Profile</NavLink>
+            <NavLink to="/time-journal">Time Journal</NavLink>
+            <NavLink to="/my-projects">My Projects</NavLink>
+            <NavLink to="/out-of-office">Out of office</NavLink>
+          </nav>
         </header>
-      </div>
+        <main>
+          <Switch>
+            <Redirect from="/" exact to="/profile" />
+            <Route path="/profile" component={MyProfilePage} />
+            <Route path="/time-journal" component={TimeJournalPage} />
+            <Route path="/my-projects" component={MyProjectsPage} />
+            <Route path="/out-of-office" component={OutOfOfficePage} />
+            <Route render={() => <p>This is the page you are looking for</p>} />
+          </Switch>
+        </main>
+        <footer>iTechArt, D2G2, Ruslan</footer>
+      </>
     );
   }
 }
